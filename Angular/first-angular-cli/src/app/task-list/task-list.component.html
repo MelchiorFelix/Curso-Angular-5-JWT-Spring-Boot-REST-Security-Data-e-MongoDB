@@ -2,7 +2,14 @@
 <button type="button" (click)="add()">Add to List</button>
 
 <ul>
-  <li *ngFor="let item of tasks">
+  <li *ngFor="let item of tasks" [innerHtml]="item">
     {{ item }}
   </li>
 </ul>
+<br>
+<div [hidden]="isAdmin">
+  Commom User
+</div>
+<div [hidden]="!isAdmin">
+  Administrator
+</div>
