@@ -13,6 +13,8 @@ export class AppComponent {
   dateValue: Date = new Date();
   money: number = 562;
   percentValue:number = 0.5;
+  isAdmin2: boolean = true;
+  profile:number = 5;
   user:  User = {
     name: 'John',
     age: 36
