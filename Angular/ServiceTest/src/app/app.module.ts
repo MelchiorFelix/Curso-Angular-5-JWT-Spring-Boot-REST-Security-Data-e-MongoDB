@@ -2,9 +2,11 @@ import { CommentService } from './comments/comment.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppComponent } from './app.component';
 import { CommentsComponent } from './comments/comments.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpModule
   ],
   providers: [CommentService],
   bootstrap: [AppComponent]

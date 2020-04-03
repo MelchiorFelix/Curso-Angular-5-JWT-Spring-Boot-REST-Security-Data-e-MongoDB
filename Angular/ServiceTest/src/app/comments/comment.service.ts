@@ -1,20 +1,18 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
 import { Comment } from './comment.modelo';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http'
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class CommentService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: Http) { }
 
   getComments(): Observable<Comment[]>{
-      return this.http.get<Comment[]>('https://jsonplaceholder.typicode.com/comments')
-             .pipe(map(response => response));
+      return this.http.get('https://jsonplaceholder.typicode.com/comments')
+              .map(response => response.json());
   }
+
 }
