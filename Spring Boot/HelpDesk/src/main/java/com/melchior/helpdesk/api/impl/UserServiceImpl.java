@@ -6,8 +6,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.melchior.helpdesk.api.entity.User;
 import com.melchior.helpdesk.api.repository.UserRepository;
+import com.melchior.helpdesk.api.security.entity.User;
 import com.melchior.helpdesk.api.service.UserService;
 
 @Service

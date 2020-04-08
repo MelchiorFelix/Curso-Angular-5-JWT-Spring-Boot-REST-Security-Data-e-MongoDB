@@ -7,26 +7,28 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+@Component
 public class JwtTokenUtil implements Serializable{
-	private static final long serialVersionUID = 1L;
-	
-	static final String CLAIM_KEY_USERNAME = "sub";
-	static final String CLAIM_KEY_CREATED = "created";
-	static final String CLAIM_KEY_EXPIRED = "exp";
+	private static final long serialVersionUID = -3301605591108950415L;
 	
 	
-	@Value("${jwt.secret}")
-	private String secret;
-	
-	@Value("${jwt.expiration}")
-	private Long expiration;
-	
-	public String getUsernameFromToken(String token) {
+    static final String CLAIM_KEY_USERNAME = "sub";
+    static final String CLAIM_KEY_CREATED = "created";
+    static final String CLAIM_KEY_EXPIRED = "exp";
+
+    @Value("${jwt.secret}")
+    private String secret;
+
+    @Value("${jwt.expiration}")
+    private Long expiration;
+
+    public String getUsernameFromToken(String token) {
         String username;
         try {
             final Claims claims = getClaimsFromToken(token);

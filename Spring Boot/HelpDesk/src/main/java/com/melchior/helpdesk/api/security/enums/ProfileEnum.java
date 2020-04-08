@@ -1,4 +1,4 @@
-package com.melchior.helpdesk.api.enums;
+package com.melchior.helpdesk.api.security.enums;
 
 public enum ProfileEnum {
 	

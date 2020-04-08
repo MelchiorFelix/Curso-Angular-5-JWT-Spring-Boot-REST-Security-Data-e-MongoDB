@@ -4,20 +4,20 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.melchior.helpdesk.api.entity.Ticket;
+import com.melchior.helpdesk.api.security.entity.Ticket;
 
 public interface TicketRepository extends MongoRepository<Ticket, String>{
 	
-	Page<Ticket> findByUserIdOrderByDateDesc(Pageable pages, String userId);
+	Page<Ticket> findByUserIdOrderByDateDesc(Pageable pages,String userId);
 	
-	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriotityOrderByDateDesc(
-			String title, String status, String priority, Pageable pages);
+	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingOrderByDateDesc(
+			String title,String status,String priority,Pageable pages);
 	
-	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriotityAndUserIdOrderByDateDesc(
-			String title, String status, String priority, Pageable pages);
+	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingAndUserIdOrderByDateDesc(
+			String title,String status,String priority,String userId,Pageable pages);
 	
-	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriotityAndAssignedUserOrderByDateDesc(
-			String title, String status, String priority, Pageable pages);
+	Page<Ticket> findByNumber(Integer number,Pageable pages);
 	
-	Page<Ticket> findByNumber(Integer number, Pageable pages);
+	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingAndAssignedUserIdOrderByDateDesc(
+			String title,String status,String priority,String assignedUserId,Pageable pages);
 }

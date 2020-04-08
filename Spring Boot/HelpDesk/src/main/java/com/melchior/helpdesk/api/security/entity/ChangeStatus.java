@@ -1,4 +1,4 @@
-package com.melchior.helpdesk.api.entity;
+package com.melchior.helpdesk.api.security.entity;
 
 import java.util.Date;
 
@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.melchior.helpdesk.api.enums.StatusEnum;
+import com.melchior.helpdesk.api.security.enums.StatusEnum;
 
 @Document
 public class ChangeStatus {

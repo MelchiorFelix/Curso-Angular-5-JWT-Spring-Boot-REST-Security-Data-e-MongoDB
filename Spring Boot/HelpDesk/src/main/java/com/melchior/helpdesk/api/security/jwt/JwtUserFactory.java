@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import com.melchior.helpdesk.api.entity.User;
-import com.melchior.helpdesk.api.enums.ProfileEnum;
+import com.melchior.helpdesk.api.security.entity.User;
+import com.melchior.helpdesk.api.security.enums.ProfileEnum;
 
 public class JwtUserFactory {
 	

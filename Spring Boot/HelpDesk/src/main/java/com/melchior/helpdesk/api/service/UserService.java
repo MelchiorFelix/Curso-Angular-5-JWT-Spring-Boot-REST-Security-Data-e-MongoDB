@@ -2,7 +2,7 @@ package com.melchior.helpdesk.api.service;
 
 import org.springframework.data.domain.Page;
 
-import com.melchior.helpdesk.api.entity.User;
+import com.melchior.helpdesk.api.security.entity.User;
 
 public interface UserService {
 	
