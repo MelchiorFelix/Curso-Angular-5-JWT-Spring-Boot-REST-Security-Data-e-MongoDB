@@ -1,6 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { User } from '../model/user.model';
-import { EventEmitter } from '@angular/core/src/event_emitter'
 
 @Injectable()
 export class SharedService {
