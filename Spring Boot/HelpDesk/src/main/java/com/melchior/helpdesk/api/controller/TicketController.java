@@ -173,6 +173,7 @@ public class TicketController {
 	public ResponseEntity<Response<Page<Ticket>>> findAll(HttpServletRequest request,@PathVariable("page") int page, 
 			@PathVariable("count") int count){
 		Response<Page<Ticket>> response = new Response<Page<Ticket>>();
+
 		Page<Ticket> tickets = null;
 		User userRequest = userFromRequest(request);
 		if(userRequest.getProfile().equals(ProfileEnum.ROLE_TECHNICIAN)) {
