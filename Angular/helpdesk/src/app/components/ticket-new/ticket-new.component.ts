@@ -67,16 +67,16 @@ export class TicketNewComponent implements OnInit {
 
 
   onFileChange(event): void{
-    if(event.target.files[0].size> 2000000){
+    if(event.target.files[0].size > 2000000){
       this.showMessage({
         type: 'error',
         text: 'Maximum image size is 2 MB'
-      })
+      });
     } else {
-      this.ticket.imagem = '';
+      this.ticket.image = '';
       var reader = new FileReader();
       reader.onloadend = (e: Event) => {
-        this.ticket.imagem = reader.result as string;
+          this.ticket.image = reader.result;
       }
       reader.readAsDataURL(event.target.files[0]);
     }
